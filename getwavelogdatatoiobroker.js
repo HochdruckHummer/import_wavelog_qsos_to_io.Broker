@@ -53,15 +53,19 @@ function runScript() {
          // Count CW-QSOs 
         const cwCount = (adifData.match(/<MODE:\d+>CW/g) || []).length;
 
+        // Count JS8-QSOs 
+        const cwCount = (adifData.match(/<MODE:\d+>JS8/g) || []).length;
+
+
         // Count Digimode-QSOs  (all digital Modes)
-        const digiModes = ["FT8", "FT4", "PSK", "RTTY", "JT65", "JT9", "OLIVIA", "CONTESTI", "ROS"];
+        const digiModes = ["FT8", "FT4", "PSK", "RTTY", "JT65", "JS8","JT9", "OLIVIA", "CONTESTI", "ROS"];
         let digiCount = 0;
 
         digiModes.forEach(mode => {
             digiCount += (adifData.match(new RegExp(`<MODE:\\d+>${mode}`, "g")) || []).length;
         });
 
-        console.log(`Total QSOs: ${totalQso}, SSB: ${ssbCount}, FM: ${fmCount}, RTTY: ${rttyCount}, FT8+FT4: ${ft4ft8Count}, PSK: ${pskCount}, Digi: ${digiCount}`);
+        console.log(`Total QSOs: ${totalQso}, SSB: ${ssbCount}, FM: ${fmCount}, RTTY: ${rttyCount}, FT8+FT4: ${ft4ft8Count}, PSK: ${pskCount}, CW: ${cwCount}, JS8: ${js8Count}, Digi: ${digiCount}`);
 
         // Write values in io.Broker datapoints
         setState("javascript.0.Wavelog.totalqso", totalQso, true);
@@ -72,6 +76,8 @@ function runScript() {
         setState("javascript.0.Wavelog.pskqso", pskCount, true);
         setState("javascript.0.Wavelog.digiqso", digiCount, true);
         setState("javascript.0.Wavelog.cwqso", cwCount, true);
+        setState("javascript.0.Wavelog.js8qso", cwCount, true);
+
     });
 }
 
