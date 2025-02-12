@@ -1,11 +1,11 @@
 const request = require('request');
 
-// Wavelog API-Einstellungen
+// Wavelog API-settings
 const WAVELOG_URL = "https://urlzumlogbuch.de/index.php/api/get_contacts_adif";
 const API_KEY = "demoapikey";
 const STATION_PROFILE_ID = "1";
 
-// Funktion zum Abrufen und Verarbeiten der Daten
+// Function for retrieving and processing data
 function runScript() {
     const options = {
         url: WAVELOG_URL,
@@ -20,40 +20,40 @@ function runScript() {
 
     request(options, (error, response, body) => {
         if (error) {
-            console.error("Fehler bei der API-Abfrage:", error);
+            console.error("Error in API query:", error);
             return;
         }
 
         if (!body || !body.adif) {
-            console.error("Fehler: Keine ADIF-Daten empfangen.");
+            console.error("Error: No ADIF data received.");
             return;
         }
 
         const adifData = body.adif;
 
-        // Alle QSOs zählen
+        // Count all QSOs 
         const totalQso = (adifData.match(/<CALL:/g) || []).length;
 
-        // SSB-QSOs zählen
+        // Count SSB-QSOs 
         const ssbCount = (adifData.match(/<MODE:\d+>SSB/g) || []).length;
 
-        // FM-QSOs zählen
+        // Count FM-QSOs 
         const fmCount = (adifData.match(/<MODE:\d+>FM/g) || []).length;
 
-        // RTTY-QSOs zählen
+        // Count RTTY-QSOs zählen
         const rttyCount = (adifData.match(/<MODE:\d+>RTTY/g) || []).length;
 
-        // FT4 & FT8 QSOs zählen
+        // Count FT4 & FT8 QSOs summed up
         const ft4ft8Count = ((adifData.match(/<MODE:\d+>FT8/g) || []).length) + 
                             ((adifData.match(/<MODE:\d+>FT4/g) || []).length);
 
-        // PSK-QSOs zählen
+        // Count PSK-QSOs 
         const pskCount = (adifData.match(/<MODE:\d+>PSK/g) || []).length;
 
-         // CW-QSOs zählen
+         // Count CW-QSOs 
         const cwCount = (adifData.match(/<MODE:\d+>CW/g) || []).length;
 
-        // Digimode-QSOs zählen (alle digitalen Modi)
+        // Count Digimode-QSOs  (all digital Modes)
         const digiModes = ["FT8", "FT4", "PSK", "RTTY", "JT65", "JT9", "OLIVIA", "CONTESTI", "ROS"];
         let digiCount = 0;
 
@@ -63,7 +63,7 @@ function runScript() {
 
         console.log(`Total QSOs: ${totalQso}, SSB: ${ssbCount}, FM: ${fmCount}, RTTY: ${rttyCount}, FT8+FT4: ${ft4ft8Count}, PSK: ${pskCount}, Digi: ${digiCount}`);
 
-        // Werte in ioBroker schreiben
+        // Write values in io.Broker datapoints
         setState("javascript.0.Wavelog.totalqso", totalQso, true);
         setState("javascript.0.Wavelog.SSB_QSOs", ssbCount, true);
         setState("javascript.0.Wavelog.fmqso", fmCount, true);
@@ -75,10 +75,10 @@ function runScript() {
     });
 }
 
-// Skript direkt einmal starten
+// Start Skript automatically
 runScript();
 
-// Intervall für automatische Wiederholung (alle 10 Minuten)
+// Automatic repeat interval (every 10 minutes)
 schedule("*/10 * * * *", function () {
     runScript();
 });
