@@ -31,5 +31,9 @@ javascript.0.Wavelog.amqso
 2. Just create the Javascript in your io.Broker Javascript Adapter. This script will auto-run every 10 minutes to update the data objects in io.Broker.
 Make shure to replace the URL, Read-only API-key from Wavelog and station ID with the correct data from your wavelog instance.
 
+## Visualisation on Awtrix device
 
 If you want to read on, how I used this data to display it on my Ulanzi TC001 Pixel clock running Awtrix firmware, read on here: https://do8ydp.de/automated-display-of-qso-statistics-from-wavelog-on-the-ulanzi-tc001-pixelclock-with-awtrix-and-io-broker/
+
+You can find suitable 16x16 pixel icons for the Awtrix or any other pixel clock in the archive called **amateur_radio_pixel_icons.zip**
+
