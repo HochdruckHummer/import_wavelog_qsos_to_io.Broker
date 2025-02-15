@@ -9,20 +9,20 @@ Installation:
 1. Create the following objects underneath the Javascript-Adapter-objects in io.Broker:
 
 
-javascript.0.Wavelog.totalqso
-javascript.0.Wavelog.totalqsoyear
-javascript.0.Wavelog.ssb
-javascript.0.Wavelog.fmqso
-javascript.0.Wavelog.rttyqso
-javascript.0.Wavelog.ft8ft4qso
-javascript.0.Wavelog.ft8qso
-javascript.0.Wavelog.ft4qso
-javascript.0.Wavelog.pskqso
-javascript.0.Wavelog.digiqso
-javascript.0.Wavelog.cwqso
-javascript.0.Wavelog.js8qso
-javascript.0.Wavelog.pskqso
-javascript.0.Wavelog.amqso
+javascript.0.Wavelog.totalqso  
+javascript.0.Wavelog.totalqsoyear  
+javascript.0.Wavelog.ssb  
+javascript.0.Wavelog.fmqso  
+javascript.0.Wavelog.rttyqso  
+javascript.0.Wavelog.ft8ft4qso  
+javascript.0.Wavelog.ft8qso  
+javascript.0.Wavelog.ft4qso  
+javascript.0.Wavelog.pskqso  
+javascript.0.Wavelog.digiqso  
+javascript.0.Wavelog.cwqso  
+javascript.0.Wavelog.js8qso  
+javascript.0.Wavelog.pskqso  
+javascript.0.Wavelog.amqso  
 
 
 
