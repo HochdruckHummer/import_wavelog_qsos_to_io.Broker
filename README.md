@@ -37,3 +37,5 @@ If you want to read on, how I used this data to display it on my Ulanzi TC001 Pi
 
 You can find suitable 16x16 pixel icons for the Awtrix or any other pixel clock in the archive called **amateur_radio_pixel_icons.zip**
 
+<img width="533" alt="Bildschirmfoto 2025-02-15 um 17 44 03" src="https://github.com/user-attachments/assets/25a296b0-07b8-43c7-8e3c-2b5551592ab8" />
+
