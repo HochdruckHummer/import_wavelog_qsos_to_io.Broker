@@ -8,6 +8,7 @@ Installation:
 
 1. Create the following objects underneath the Javascript-Adapter-objects in io.Broker:
 
+<img width="614" alt="Bildschirmfoto 2025-02-15 um 17 39 04" src="https://github.com/user-attachments/assets/1eb47cbb-6b8a-4022-ac8d-a91b340b223a" />
 
 javascript.0.Wavelog.totalqso  
 javascript.0.Wavelog.totalqsoyear  
