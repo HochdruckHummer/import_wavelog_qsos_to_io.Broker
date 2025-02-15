@@ -10,14 +10,21 @@ Installation:
 
 
 javascript.0.Wavelog.totalqso
-javascript.0.Wavelog.SSB_QSOs
+javascript.0.Wavelog.totalqsoyear
+javascript.0.Wavelog.ssb
 javascript.0.Wavelog.fmqso
 javascript.0.Wavelog.rttyqso
 javascript.0.Wavelog.ft8ft4qso
+javascript.0.Wavelog.ft8qso
+javascript.0.Wavelog.ft4qso
 javascript.0.Wavelog.pskqso
 javascript.0.Wavelog.digiqso
 javascript.0.Wavelog.cwqso
 javascript.0.Wavelog.js8qso
+javascript.0.Wavelog.pskqso
+javascript.0.Wavelog.amqso
+
+
 
 
 2. Just create the Javascript in your io.Broker Javascript Adapter. This script will auto-run every 10 minutes to update the data objects in io.Broker.
