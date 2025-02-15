@@ -4,7 +4,7 @@ Created by Daniel Beckemeier, DO8YDP
 
 This Javascript imports QSO numbers to ioBroker objects. This data can then be used to visualize it, for example to push it to Awtrix devices for example. 
 
-##Installation:
+## Installation:
 
 1. Create the following objects underneath the Javascript-Adapter-objects in io.Broker:
 
