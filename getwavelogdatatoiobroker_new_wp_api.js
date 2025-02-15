@@ -45,8 +45,8 @@ function runScript() {
 
         // Write values to ioBroker datapoints (update these states as needed)
         setState("javascript.0.Wavelog.totalqso", totalQso, true);
-        setState("javascript.0.Wavelog.thisYearQso", totalQsoYear, true);
-        setState("javascript.0.Wavelog.SSB_QSOs", ssbCount, true);
+        setState("javascript.0.Wavelog.totalqsoyear", totalQsoYear, true);
+        setState("javascript.0.Wavelog.ssbqso", ssbCount, true);
         setState("javascript.0.Wavelog.fmqso", fmCount, true);
         setState("javascript.0.Wavelog.rttyqso", rttyCount, true);
         setState("javascript.0.Wavelog.ft8ft4qso", ft8ft4Count, true);
