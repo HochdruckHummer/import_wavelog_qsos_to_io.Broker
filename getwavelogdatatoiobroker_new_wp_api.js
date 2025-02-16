@@ -14,7 +14,6 @@ function runScript() {
         body: {
             key: API_KEY,
             station_id: STATION_PROFILE_ID,
-            fetchfromid: 0
         },
         timeout: 15000
     };
@@ -30,16 +29,34 @@ function runScript() {
         }
 
         // The new API now returns pre-aggregated QSO statistics.
-        const totalQso      = body.total_qso;
-        const totalQsoYear  = body.total_qso_year;
-        const ssbCount      = body.ssb_qso;
-        const fmCount       = body.fm_qso;
-        const rttyCount     = body.rtty_qso;
-        const ft8ft4Count   = body.ft8ft4_qso;
-        const pskCount      = body.psk_qso;
-        const cwCount       = body.cw_qso;
-        const js8Count      = body.js8_qso;
-        const digiCount     = body.digi_qso;
+        let totalQso      = body.statistics.totalalltime[0].count;
+        let totalQsoYear  = body.statistics.totalthisyear[0].count;
+        let ssbCount = 0, fmCount = 0, rttyCount = 0, ft8ft4Count = 0;
+        let pskCount = 0, cwCount = 0, js8Count = 0, digiCount = 0;
+
+        const digi_modes = ['FT8', 'FT4', 'PSK', 'RTTY', 'JS8', 'JT65', 'JT9', 'OLIVIA', 'CONTESTI', 'ROS']; // Add more as needed
+
+        if (body.statistics.totalgroupedmodes) {
+            body.statistics.totalgroupedmodes.forEach(mode => {
+                const col_mode = mode.col_mode;
+                const col_submode = mode.col_submode || '';
+
+                if (col_mode === 'SSB') ssbCount += Number(mode.count);
+                if (col_mode === 'FM') fmCount += Number(mode.count);
+                if (col_mode === 'RTTY') rttyCount += Number(mode.count);
+                if (col_mode === 'CW') cwCount += Number(mode.count);
+                if (col_mode === 'PSK' || col_submode.startsWith('PSK')) pskCount += Number(mode.count);
+                if (col_mode === 'JS8') js8Count += Number(mode.count);
+                if (col_mode === 'FT8' || col_submode === 'FT4') ft8ft4Count += Number(mode.count);
+
+                // Digital modes total
+                digi_modes.forEach(digi => {
+                    if (col_mode.startsWith(digi) || col_submode.startsWith(digi)) {
+                        digiCount += Number(mode.count);
+                    }
+                });
+            });
+        }
 
         console.log(`Total QSOs: ${totalQso}, This Year: ${totalQsoYear}, SSB: ${ssbCount}, FM: ${fmCount}, RTTY: ${rttyCount}, FT8+FT4: ${ft8ft4Count}, PSK: ${pskCount}, CW: ${cwCount}, JS8: ${js8Count}, Digi: ${digiCount}`);
 
