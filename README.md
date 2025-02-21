@@ -2,11 +2,11 @@
 
 Created by Daniel Beckemeier, DO8YDP
 
-This Javascript imports QSO numbers to ioBroker objects. This data can then be used to visualize it, for example to push it to Awtrix devices for example. 
+This Javascript imports QSO numbers to ioBroker objects. This data can then be used to visualize it, for example to push it to Awtrix devices (see how to below). 
 
 ## Compatibility
 
-This script needs at least Wavelog version 2.0.1. to work, as there was an API implemented for this tool.
+This script requires at least Wavelog version 2.0.1. to work, as there was an API implemented for this tool.
 
 
 ## Installation:
