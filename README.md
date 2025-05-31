@@ -1,6 +1,6 @@
 # import_wavelog_qsos_to_io.Broker
 
-Created by Daniel Beckemeier, DO8YDP
+Created by Daniel Beckemeier, DL8YDP
 
 This Javascript imports QSO numbers to ioBroker objects. This data can then be used to visualize it, for example to push it to Awtrix devices (see how to below). 
 
