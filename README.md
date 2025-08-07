@@ -39,7 +39,7 @@ Make shure to replace the URL, Read-only API-key from Wavelog and station ID wit
 There are 3 versions of Javascript in this repository (you can choose which one you want to use):
 
 **getwavelogdatatoiobroker_new_api_summed_up_stations.js (Use this one)**
-Your way to go. Can handle and sum up multiple station IDs.
+Your way to go. This file lets you read from multiple Station IDs and sums up the values over multiple Station IDs. Yay.
 
 **getwavelogdatatoiobroker_new_wp_api.js (Might use it if version 1 doesn't work).**
 The first stable version that retrieves Wavelog-Data via the dedicated wavelog endpoint. Can handle only one single station ID.
@@ -47,10 +47,6 @@ The first stable version that retrieves Wavelog-Data via the dedicated wavelog e
 
 **getwavelogdatatoiobroker_old.js (DONT USE IT)**
 This is old and it does not use the dedicated wavelog endpoint. Instead it calculates the total sums itself. Highly inefficient. I will delete this file in the future as this kind of data retrieval will be deprecated soon. Don't use it. 
-
-
-
-This file lets you read from multiple Station IDs and sums up the values over multiple Station IDs. Yay.
 
 
 
