@@ -58,3 +58,16 @@ You can find suitable 16x16 pixel icons for the Awtrix or any other pixel clock 
 
 <img width="533" alt="Bildschirmfoto 2025-02-15 um 17 44 03" src="https://github.com/user-attachments/assets/25a296b0-07b8-43c7-8e3c-2b5551592ab8" />
 
+##  Support the development
+
+Did this application help you?
+If you like, you can send me a beer via PayPal:
+
+<a href="https://paypal.me/DanielBeckemeier" target="_blank" rel="nofollow sponsored noopener">
+  <img
+    width="300"
+    height="50"
+    alt="Donate a beer"
+    src="https://github.com/user-attachments/assets/7c223db3-f267-447e-9207-4fe1cc72f829"
+  />
+</a>
